@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 import requests
+import json
 
 st.title("Case Count Predictor")
 
