@@ -3,12 +3,7 @@ import pandas as pd
 import time
 import requests
 
-#pickle_in = open('model.pkl', 'rb')
-#classifier = pickle.load(pickle_in)
-classifier = joblib.load('model.pkl')
 st.title("Case Count Predictor")
-
-#classifier.load_model('model.json')
 
 @st.cache
 def prediction(Date, District, Day):
