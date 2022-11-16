@@ -253,8 +253,10 @@ def prediction(Date, District, Day):
         day_6 = 0
         day_7 = 1
 
-    out = {"occurred_on_date":occurred_on_date,"D_A1":D_A1,"D_A15":D_A15,"D_A7":D_A7,"D_B2":D_B2,"D_B3":D_B3,"D_C11":D_C11,"D_C6":D_C6,"D_D14":D_D14,"D_D4":D_D4,"D_E13":D_E13,"D_E18":D_E18,"D_E5":D_E5,"D_External":D_External,"day_1":day_1,"day_2":day_2,"day_3":day_3,"day_4":day_4,"day_5":day_5,"day_6":day_6,"day_7":day_7}
-    out = str(out)
+    data = {"occurred_on_date":occurred_on_date,"D_A1":D_A1,"D_A15":D_A15,"D_A7":D_A7,"D_B2":D_B2,"D_B3":D_B3,"D_C11":D_C11,"D_C6":D_C6,"D_D14":D_D14,"D_D4":D_D4,"D_E13":D_E13,"D_E18":D_E18,"D_E5":D_E5,"D_External":D_External,"day_1":day_1,"day_2":day_2,"day_3":day_3,"day_4":day_4,"day_5":day_5,"day_6":day_6,"day_7":day_7}
+    data = pd.Series(data)
+    out = data.to_json()
+
     url = "https://community-models.a360.ai/boston-crime-boston-crime-demo-11-16-1-0/"
     with open('header.json') as json_file:
         headers = json.load(json_file)
