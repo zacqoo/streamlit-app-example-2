@@ -263,7 +263,7 @@ def prediction(Date, District, Day):
 
     prediction = requests.post(url,data=out,headers=headers).text.split(':')[-1].split("}")[0]
      
-    return int(prediction), District
+    return int(float(prediction)), District
 
 def main():       
     Date = st.date_input("Enter Date")
